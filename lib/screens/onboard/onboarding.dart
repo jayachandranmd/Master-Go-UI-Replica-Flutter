@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:samlpe/screens/onboard/onboard_model.dart';
 
-import '../../homepage.dart';
+import '../auth/signin.dart';
 
 class OnboardScreens extends StatefulWidget {
   const OnboardScreens({Key? key}) : super(key: key);
@@ -19,6 +19,7 @@ class _OnboardScreensState extends State<OnboardScreens> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Stack(
           children: [
             PageView.builder(
@@ -55,7 +56,7 @@ class _OnboardScreensState extends State<OnboardScreens> {
                                 color: HexColor('#838391')),
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 40,
                           )
                         ],
                       ),
@@ -110,7 +111,10 @@ class _OnboardScreensState extends State<OnboardScreens> {
                             width: 360,
                             child: const Text(
                               'Next',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Gilroy',
+                                  color: Colors.white),
                             ),
                           ),
                         )
@@ -127,7 +131,7 @@ class _OnboardScreensState extends State<OnboardScreens> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HomePage()));
+                                  builder: (context) => const SigninPage()));
                         },
                         child: FloatingActionButton(
                           backgroundColor: HexColor('#20C3AF'),
@@ -136,7 +140,8 @@ class _OnboardScreensState extends State<OnboardScreens> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: ((context) => const HomePage())));
+                                    builder: ((context) =>
+                                        const SigninPage())));
                           },
                         )),
                   )
